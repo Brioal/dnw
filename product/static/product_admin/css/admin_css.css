@@ -1,0 +1,15 @@
+#site-name {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+#site-name .site-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+#site-name .site-name-text {
+    margin-left: 10px;
+}

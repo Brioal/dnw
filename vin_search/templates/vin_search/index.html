@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+    {% load staticfiles %}
+
+    <script src="{% static 'vin_search/layer/layer.js' %}"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    $("#submit_form").onclick = myAlert();
+
+    function myAlert() {
+        layer.open({
+            type: 2,
+            title: 'layer mobile页',
+            shadeClose: true,
+            shade: 0.8,
+            area: ['90%', '90%'],
+            content: 'vin_cartype_display.html' //iframe的url
+        });
+    }
+</script>
+
+
+<body>
+{#<h1>输入的vin码</h1>#}
+{#{{ vin }}#}
+{#<h1>查到的产品编码</h1>#}
+{#{% for product in product_list %}#}
+{#    {{ product }}#}
+{#{% endfor %}#}
+{#<h1>查到的车型</h1>#}
+{#{% for carInfo in carInfo_list %}#}
+{#    {{ carInfo }}#}
+{#{% endfor %}#}
+
+<div style="margin: 10px 40%">
+    <form action="/vin_search/" method="post">
+        {% csrf_token %}
+        <input id="vin_input" type="text" name="vin" value="">
+        <a id="submit_form" href=”javascript:void(0)”>
+            <button>确定</button>
+        </a>
+    </form>
+</div>
+</body>
+</html>
+

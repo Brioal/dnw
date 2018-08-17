@@ -1,0 +1,487 @@
+{% extends "admin/base.html" %}
+
+{% block content  %}
+
+
+
+
+<!-- Container -->
+<div id="container"><span class="sidebar-container-toggle sidebar-header-menu-icon icon-menu sidebar-toggle"></span>
+
+
+    <!-- Header -->
+    <div id="header">
+
+
+
+        <div id="user-tools" class="user-tools initialized"><ul class="sidebar-dependent"><li class="user-tools-welcome-msg">1</li><li class="user-tools-link"><a href="/admin/password_change/">修改密码</a></li><li class="user-tools-link"><a href="/admin/logout/">注销</a></li></ul></div>
+
+
+    </div>
+    <!-- END Header -->
+
+
+    <div class="breadcrumbs initialized">
+    <a href="/admin/">首页</a>
+
+    </div>
+
+
+
+
+
+
+
+    <!-- Content -->
+    <div id="content" class="colM">
+
+
+
+
+
+ <h1>修改  门店</h1>
+        <div id="content-main">
+
+
+  <div class="changeform-navigation initialized">
+            <a href="/admin/organization/laststore/2/change/" class="changeform-navigation-button segmented-button left" title="2号店"><span class="changeform-navigation-button-icon left icon-arrow-left"></span><span class="changeform-navigation-button-label">
+
+                            2号店
+
+                    </span></a><a class="changeform-navigation-button segmented-button right disabled" title=""><span class="changeform-navigation-button-icon right icon-arrow-right"></span><span class="changeform-navigation-button-label">
+
+                            ---
+
+                    </span></a>
+        </div><ul class="object-tools initialized">
+
+    <li>
+
+        <a href="/admin/organization/laststore/1/history/" class="historylink">历史</a>
+    </li>
+
+
+  </ul>
+
+
+<form enctype="multipart/form-data" action="" method="post" id="laststore_form" novalidate=""><input type="hidden" name="csrfmiddlewaretoken" value="MWl6ipN49et4mVAKA6gHrrhKUnzDbnunztp5ErYr9wq15tZqT4E9QihAyUrLNevS">
+<div>
+
+
+
+
+
+
+
+
+<fieldset class="module aligned  module_0 initialized">
+
+
+
+        <div class="form-row field-name">
+
+
+                <div>
+
+
+                        <label class="required" for="id_name">名称:</label>
+
+                            <input type="text" name="name" value="1号店" class="vTextField" maxlength="100" required="" id="id_name">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-parent">
+
+
+                <div>
+
+
+                        <label class="required" for="id_parent">所属机构:</label>
+
+                            <div class="related-widget-wrapper">
+    <select name="parent" required="" id="id_parent" tabindex="-1" class="select2-hidden-accessible" aria-hidden="true">
+  <option value="">---------</option>
+
+  <option value="1" selected="">兰州市</option>
+
+  <option value="2">西宁</option>
+
+  <option value="3">白银市</option>
+
+</select><span class="select2 select2-container select2-container--jet" dir="ltr" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-labelledby="select2-id_parent-container"><span class="select2-selection__rendered" id="select2-id_parent-container" title="兰州市">兰州市</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span><span class="select2 select2-container select2-container--jet" dir="ltr" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-id_parent-container"><span class="select2-selection__rendered" id="select2-id_parent-container" title="兰州市">兰州市</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+
+        <a class="related-widget-wrapper-link change-related initialized" id="change_id_parent" data-href-template="/admin/organization/cityagent/__fk__/change/?_to_field=id&amp;_popup=1" title="更改选中的  市代" href="/admin/organization/cityagent/1/change/?_to_field=id&amp;_popup=1"><span class="related-widget-wrapper-icon"></span></a><a class="related-widget-wrapper-link add-related initialized" id="add_id_parent" href="/admin/organization/cityagent/add/?_to_field=id&amp;_popup=1" title="增加另一个   市代"><span class="related-widget-wrapper-icon"></span></a>
+
+</div>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-admin_user">
+
+
+                <div>
+
+
+                        <label class="required" for="id_admin_user">管理员:</label>
+
+                            <div class="related-widget-wrapper">
+    <select name="admin_user" required="" id="id_admin_user" tabindex="-1" class="select2-hidden-accessible" aria-hidden="true">
+  <option value="">---------</option>
+
+  <option value="2">伊一</option>
+
+  <option value="3">妥阿阳</option>
+
+  <option value="8" selected="">刘柳</option>
+
+  <option value="9">q</option>
+
+  <option value="13">邓伟祥</option>
+
+</select><span class="select2 select2-container select2-container--jet" dir="ltr" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-labelledby="select2-id_admin_user-container"><span class="select2-selection__rendered" id="select2-id_admin_user-container" title="刘柳">刘柳</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span><span class="select2 select2-container select2-container--jet" dir="ltr" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-id_admin_user-container"><span class="select2-selection__rendered" id="select2-id_admin_user-container" title="刘柳">刘柳</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+
+        <a class="related-widget-wrapper-link change-related initialized" id="change_id_admin_user" data-href-template="/admin/users/myuser/__fk__/change/?_to_field=id&amp;_popup=1" title="更改选中的账号" href="/admin/users/myuser/8/change/?_to_field=id&amp;_popup=1"><span class="related-widget-wrapper-icon"></span></a><a class="related-widget-wrapper-link add-related initialized" id="add_id_admin_user" href="/admin/users/myuser/add/?_to_field=id&amp;_popup=1" title="增加另一个 账号"><span class="related-widget-wrapper-icon"></span></a><a class="related-widget-wrapper-link delete-related initialized" id="delete_id_admin_user" data-href-template="/admin/users/myuser/__fk__/delete/?_to_field=id&amp;_popup=1" title="取消选中 账号" href="/admin/users/myuser/8/delete/?_to_field=id&amp;_popup=1"><span class="related-widget-wrapper-icon"></span></a>
+
+
+
+
+
+
+
+
+        <br class="clear">
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+
+
+
+
+
+
+
+
+
+        <div class="related-popup-container scrollable" style="display: block;">
+            <a href="#" class="related-popup-back" style="display: inline;">
+                <span class="related-popup-back-icon icon-arrow-left"></span>
+                <span class="related-popup-back-label">back</span>
+            </a>
+            <span class="icon-refresh loading-indicator" style="display: none;"></span>
+        <div class="related-popup" style="display: block;"><iframe src="/admin/organization/cityagent/add/?_to_field=id&amp;_popup=1"></iframe></div></div>
+
+        <div class="sidebar-header-wrapper sidebar-dependent">
+            <div class="sidebar-header sidebar-dependent">
+                <a href="#" class="sidebar-header-menu sidebar-toggle">
+                    <span class="sidebar-header-menu-icon icon-menu"></span>
+                    <span class="sidebar-header-menu-icon icon-cross"></span>
+                </a>
+            </div>
+        </div>
+        <div class="sidebar sidebar-dependent initialized">
+            <div class="sidebar-wrapper scrollable ps-container" data-ps-id="c7113cab-8c5c-723c-ac01-6ba58490d6ee"><div id="branding" class="initialized" style="height: 50px;">
+            <span id="branding-menu" class="sidebar-header-menu-icon icon-menu sidebar-toggle"></span>
+            <span id="branding-pin" class="sidebar-link-icon icon-pin sidebar-pin"></span>
+
+        </div>
+                <div class="sidebar-section">
+
+                        <a href="/admin/" class="sidebar-link icon">
+                            <span class="sidebar-link-label">
+                                <span class="sidebar-link-icon icon-data"></span>
+                                首页
+                            </span>
+                        </a>
+
+
+
+
+
+                </div>
+
+
+
+
+
+                            <input type="hidden" name="csrfmiddlewaretoken" value="ZgSbpeQPX38OGqJojFSZShLPjAGYgHybMNWaLg1cXl5LpY84CDgrh8LFX7y6SyzG">
+                            <input type="hidden" name="app_label">
+
+
+                        <div class="sidebar-section">
+                            <div class="sidebar-title">
+                                <span class="sidebar-right">
+                                    <a href="#" class="sidebar-right-edit edit-apps-list"><span class="icon-settings"></span></a>
+                                </span>
+                                Applications
+                            </div>
+
+                            <div class="apps-list-pinned">
+
+
+
+
+
+
+
+                            </div>
+                            <a href="#" class="sidebar-center-link apps-hide">
+                                <span class="apps-hide-label apps-visible">Hide applications</span>
+                                <span class="apps-hide-label apps-hidden">Show hidden</span>
+                            </a>
+                            <div class="apps-list">
+
+
+                                        <a href="/admin/users/" class="sidebar-link popup-section-link app-item" data-app-label="users" data-popup-section-class="sidebar-popup-section-users" data-order="1">
+                                            <span class="sidebar-left collapsible">
+                                                <span class="sidebar-left-pin icon-star pin-toggle"></span>
+                                                <span class="sidebar-left-unpin icon-cross pin-toggle"></span>
+                                            </span>
+
+                                            <span class="sidebar-right">
+                                                <span class="sidebar-right-arrow icon-arrow-right"></span>
+                                            </span>
+
+                                            <span class="sidebar-link-label">
+                                                账号管理
+                                            </span>
+                                        </a>
+
+
+
+                                        <a href="/admin/organization/" class="sidebar-link popup-section-link app-item" data-app-label="organization" data-popup-section-class="sidebar-popup-section-organization" data-order="2">
+                                            <span class="sidebar-left collapsible">
+                                                <span class="sidebar-left-pin icon-star pin-toggle"></span>
+                                                <span class="sidebar-left-unpin icon-cross pin-toggle"></span>
+                                            </span>
+
+                                            <span class="sidebar-right">
+                                                <span class="sidebar-right-arrow icon-arrow-right"></span>
+                                            </span>
+
+                                            <span class="sidebar-link-label">
+                                                组织结构
+                                            </span>
+                                        </a>
+
+
+
+                                        <a href="/admin/store/" class="sidebar-link popup-section-link app-item" data-app-label="store" data-popup-section-class="sidebar-popup-section-store" data-order="3">
+                                            <span class="sidebar-left collapsible">
+                                                <span class="sidebar-left-pin icon-star pin-toggle"></span>
+                                                <span class="sidebar-left-unpin icon-cross pin-toggle"></span>
+                                            </span>
+
+                                            <span class="sidebar-right">
+                                                <span class="sidebar-right-arrow icon-arrow-right"></span>
+                                            </span>
+
+                                            <span class="sidebar-link-label">
+                                                店面管理
+                                            </span>
+                                        </a>
+
+
+                            </div>
+                        </div>
+
+
+                    <div class="sidebar-section last">
+                        <div class="dialog-confirm" id="bookmarks-add-dialog" title="Add bookmark">
+                            <form action="/jet/add_bookmark/" method="POST" id="bookmarks-add-form">
+                                <input type="hidden" name="csrfmiddlewaretoken" value="ZgSbpeQPX38OGqJojFSZShLPjAGYgHybMNWaLg1cXl5LpY84CDgrh8LFX7y6SyzG">
+                                <p>Title:</p>
+                                <input type="text" name="title" class="fill_width">
+                                <p>URL:</p>
+                                <input type="text" name="url" class="fill_width">
+                            </form>
+                        </div>
+                        <form action="/jet/remove_bookmark/" method="POST" id="bookmarks-remove-form">
+                            <input type="hidden" name="csrfmiddlewaretoken" value="ZgSbpeQPX38OGqJojFSZShLPjAGYgHybMNWaLg1cXl5LpY84CDgrh8LFX7y6SyzG">
+                            <input type="hidden" name="id">
+                        </form>
+                        <div class="dialog-confirm" id="bookmarks-remove-dialog" title="Delete bookmark">
+                            <p>Are you sure want to delete this bookmark?</p>
+                        </div>
+
+                        <div class="sidebar-title">
+                            <span class="sidebar-right">
+                                <a href="#" class="sidebar-right-plus bookmarks-add" title="Add bookmark"><span class="icon-add"></span></a>
+                            </span>
+                            bookmarks
+                        </div>
+
+                        <div class="bookmarks-list">
+
+
+                            <a class="sidebar-link bookmark-item clone">
+                                <span class="sidebar-right collapsible">
+                                    <span class="sidebar-right-remove bookmarks-remove">删除</span>
+                                </span>
+                                <span class="sidebar-link-label"></span>
+                            </a>
+                        </div>
+                    </div>
+
+            <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div></div>
+
+
+                <div class="sidebar-popup-container">
+                    <div class="sidebar-popup scrollable">
+                        <a href="#" class="sidebar-close sidebar-back">
+                            <span class="sidebar-close-icon icon-arrow-left"></span>
+                        </a>
+
+
+                                <div class="sidebar-popup-section sidebar-popup-section-users">
+                                    <div class="sidebar-popup-title">
+                                        账号管理
+                                    </div>
+
+                                    <input class="sidebar-popup-search" placeholder="搜索...">
+
+                                    <ul class="sidebar-popup-list">
+
+                                            <li class="sidebar-popup-list-item app-users">
+                                                <a href="/admin/users/" class="sidebar-popup-list-item-link">Application page</a>
+                                            </li>
+
+
+
+
+                                                <li class="sidebar-popup-list-item model-myuser">
+                                                    <a href="/admin/users/myuser/" class="sidebar-popup-list-item-link">
+                                                        账号
+                                                    </a>
+                                                </li>
+
+
+                                    </ul>
+                                </div>
+
+
+
+                                <div class="sidebar-popup-section sidebar-popup-section-organization">
+                                    <div class="sidebar-popup-title">
+                                        组织结构
+                                    </div>
+
+                                    <input class="sidebar-popup-search" placeholder="搜索...">
+
+                                    <ul class="sidebar-popup-list">
+
+                                            <li class="sidebar-popup-list-item app-organization">
+                                                <a href="/admin/organization/" class="sidebar-popup-list-item-link">Application page</a>
+                                            </li>
+
+
+
+
+                                                <li class="sidebar-popup-list-item model-headstore">
+                                                    <a href="/admin/organization/headstore/" class="sidebar-popup-list-item-link">
+                                                            总店
+                                                    </a>
+                                                </li>
+
+
+
+                                                <li class="sidebar-popup-list-item model-provinceagent">
+                                                    <a href="/admin/organization/provinceagent/" class="sidebar-popup-list-item-link">
+                                                           省代
+                                                    </a>
+                                                </li>
+
+
+
+                                                <li class="sidebar-popup-list-item model-cityagent">
+                                                    <a href="/admin/organization/cityagent/" class="sidebar-popup-list-item-link">
+                                                          市代
+                                                    </a>
+                                                </li>
+
+
+
+                                                <li class="sidebar-popup-list-item model-laststore">
+                                                    <a href="/admin/organization/laststore/" class="sidebar-popup-list-item-link">
+                                                         门店
+                                                    </a>
+                                                </li>
+
+
+                                    </ul>
+                                </div>
+
+
+
+                                <div class="sidebar-popup-section sidebar-popup-section-store">
+                                    <div class="sidebar-popup-title">
+                                        店面管理
+                                    </div>
+
+                                    <input class="sidebar-popup-search" placeholder="搜索...">
+
+                                    <ul class="sidebar-popup-list">
+
+                                            <li class="sidebar-popup-list-item app-store">
+                                                <a href="/admin/store/" class="sidebar-popup-list-item-link">Application page</a>
+                                            </li>
+
+
+
+
+                                                <li class="sidebar-popup-list-item model-customer">
+                                                    <a href="/admin/store/customer/" class="sidebar-popup-list-item-link">
+                                                        客户信息
+                                                    </a>
+                                                </li>
+
+
+
+                                                <li class="sidebar-popup-list-item model-customer2">
+                                                    <a href="/admin/store/customer2/" class="sidebar-popup-list-item-link">
+                                                        客户信息_前台
+                                                    </a>
+                                                </li>
+
+
+
+                                                <li class="sidebar-popup-list-item">
+                                                    <a href="http://127.0.0.1:8000/vin_search/test" class="sidebar-popup-list-item-link">
+                                                        测试
+                                                    </a>
+                                                </li>
+
+
+                                    </ul>
+                                </div>
+
+
+                    </div>
+                </div>
+
+        </div>
+
+
+
+
+</div>
+<!-- END Container -->
+
+
+
+</div></fieldset></div></form></div></div></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"><div>更改选中的  市代</div></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"><div style="display: none;">增加另一个   市代</div><div>增加另一个   市代</div></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
+
+
+
+
+
+
+{% endblock %}

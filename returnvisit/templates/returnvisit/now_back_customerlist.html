@@ -1,0 +1,171 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+ <!--jquery-->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <!--bootstrap-->
+    <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link href="/static/indexpage/css/iziToast.min.css" rel="stylesheet">
+    <script src="/static/indexpage/js/iziToast.min.js"></script>
+<style>
+    div {
+        {#text-align: center;#}
+        margin: auto;
+    }
+
+    {#th, td, tr {#}
+    {#    text-align: center;#}
+    {#    margin: auto;#}
+    {#    vertical-align: middle;#}
+    {#}#}
+
+    tr td th{
+        {#vertical-align: middle;#}
+    }
+</style>
+<!--js-->
+<script>
+    // 模拟的数据
+    var data_all = null;
+    getData();
+
+    // 请求网络,然后填充表格
+    function getData() {
+        // 网络请求
+        $.ajax({
+            // 完成走访的地址
+            url: "http://127.0.0.1:8000/back_plan/backlist/",
+            type: 'GET',
+            success: function (data) {
+                data=JSON.parse(data);
+                if (data.success=='true') {
+                    data_all = data;
+                    // 显示数据
+                    showData();
+                } else {
+                    // 显示失败
+                    iziToast.error({
+                        title: '出错了',
+                        message: '获取回访列表失败,请稍后再试'
+                    });
+                }
+            },
+            error: function (data) {
+                // 显示失败
+                iziToast.error({
+                    title: '出错了',
+                    message: '获取回访列表失败,请稍后再试'
+                });
+
+            }
+        });
+    }
+
+    // 显示数据
+    var bean = {};
+
+    function showData() {
+        // 定义属性
+        $(".tr_add").remove();
+        for (i = 0; i < data_all.data.length; i++) {
+            bean = data_all.data[i];
+            var state = '';
+            if (bean.back_state){
+                state = '已回访';
+            } else{
+                state='未回访';
+            }
+            var line = "<tr class='tr_add'>\n" +
+                "            <th scope=\"row\">" + bean.id + "</th>\n" +
+                "            <td>" + bean.name + "</td>\n" +
+                "            <td>" + bean.phone + "</td>\n" +
+                "            <td>" + state+ "</td>\n" +
+                "            <td>\n" +
+                "                <button class=\"btn btn-primary btn_done\" type=\"button\" attr_id='" + bean.id + "'>回访</button>\n" +
+                "            </td>\n" +
+                "        </tr>";
+            // 添加
+            $("#tbody").append(line);
+        }
+
+    }
+
+    // 点击回访之后进行的操作
+    $(".btn_done").click(function () {
+        // 显示状态
+        iziToast.info({
+            title: '请稍等',
+            position: 'topRight',
+            message: '正在回访,请稍等!'
+        });
+        // 获取id
+        var id = $(this).attr("attr_id");
+        // 网络请求
+        $.ajax({
+            // 完成走访的地址
+            url: "https://brioal.xin:8084",
+            type: 'POST',
+            data: {
+                id: id
+            },
+            success: function (data) {
+                if (data.success) {
+                    // 显示成功
+                    var toast = document.querySelector('.iziToast');
+                    iziToast.hide({}, toast);
+                    // 显示文件上传成功
+                    iziToast.success({
+                        title: '成功',
+                        position: 'topRight',
+                        message: '回访成功!'
+                    });
+                    // 重新获取数据
+                    getData();
+                } else {
+                    var toast = document.querySelector('.iziToast');
+                    iziToast.hide({}, toast);
+                    // 显示失败
+                    iziToast.error({
+                        title: '出错了',
+                        message: '回访失败,请稍后重试'
+                    });
+                    // 重新获取数据
+                    getData();
+                }
+            },
+            error: function (data) {
+                var toast = document.querySelector('.iziToast');
+                iziToast.hide({}, toast);
+                // 显示失败
+                iziToast.error({
+                    title: '出错了',
+                    message: '回访失败,请稍后重试'
+                });
+                // 重新获取数据
+                getData();
+            }
+        })
+    });
+</script>
+
+
+
+<!--HTML-->
+<div style="margin: 20px">
+    <table class="table table-striped">
+        <thead style="color: #ffffff;background-color: #0093ff;border: #32383e">
+        <tr>
+            <th >编号</th>
+            <th >回访人姓名</th>
+            <th >回访人电话号</th>
+            <th >回访状态</th>
+            <th >操作</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,280 @@
+{%  extends 'admin/base_site.html' %}
+{% block content %}
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 引入bootstrap-table样式 -->
+    <link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet">
+
+    <!-- jquery -->
+    <script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- bootstrap-table.min.js -->
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+    <!-- 引入中文语言包 -->
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
+    <!--引入sweetalert插件-->
+    <script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link href="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet">
+    <!--JavaScript部分-->
+    <script type="text/javascript">
+       $(document).ready(function() {
+
+
+            $("#commit").click(function (){
+                var name = $("#item_name").val();
+                var price = $("#item_price").val();
+                var freq = $("#frequency").val();
+                var steps =[];
+                var stepcps=[];
+                var stepyqs=[];
+                var num=0;
+                for(var i=0;i<$(".step").length;i++)
+                {
+                    num=i+1;
+                    steps.push({
+                       'step_num':num,'step_content':$(".step")[i].value
+                    });
+                }
+                for(var i=0;i<$(".stepcp").length;i++)
+                {
+                    stepcps.push({
+                       'name':$(".stepcp")[i].value,'step':$(".stepcp")[i].id,'num':$(".stepnum")[i].value
+                    });
+                }
+                for(var i=0;i<$(".stepyq").length;i++)
+                {
+                    stepyqs.push({
+                       'name':$(".stepyq")[i].value,'step':$(".stepyq")[i].id
+                    });
+                }
+                 $.ajax({
+                     url: "/items/api/create/",
+                     type: "put",
+                     dataType: "json",
+                     data: JSON.stringify({
+                         "item_name": name,
+                         "item_price": price,
+                         "frequency": freq,
+                         "steps": steps,
+                         "product":stepcps,
+                         "instrument":stepyqs
+                    }),
+                     success: function (data) {
+                         $("#test").append("<p> 数据增加成功：" + data.text + "</p>");
+                     },
+                     error: function (data) {
+                         $("#test").append("<p>出错了</p>");
+                     }
+                 })
+             });
+
+
+        });
+    </script>
+
+    <script type="text/javascript">
+			var i=0;
+			function addRow(){
+				i+=1;
+				var j=i;
+				var node=document.createElement("li");
+				node.classList.add("form-group");
+				node.classList.add("form-inline");
+				node.id=i;
+				var diver=document.createElement("div");
+				diver.classList.add("col-md-1");
+				diver.innerHTML="步骤"+i;
+				var inputer=document.createElement("input");
+				inputer.classList.add("col-md-8");
+				inputer.classList.add("step");
+				var diver2=document.createElement("div");
+				diver2.classList.add("col-md-3");
+				diver2.classList.add("form-group");
+				var ulcp=document.createElement("ul");
+				var ulyq=document.createElement("ul");
+				var btn1=document.createElement("input");
+				btn1.setAttribute("type","button");
+				btn1.value="添加产品";
+				var btn2=document.createElement("input");
+				btn2.setAttribute("type","button");
+				btn2.onclick=addinstrument;
+				btn2.value="添加仪器";
+				diver2.appendChild(btn1);
+				diver2.appendChild(btn2);
+				node.appendChild(diver);
+				node.appendChild(inputer);
+				node.appendChild(diver2);
+				node.appendChild(ulcp);
+				node.appendChild(ulyq);
+				document.getElementById("a").appendChild(node);
+				btn1.onclick=function(){
+					var node1=document.createElement("li");
+					node1.setAttribute("style","width:80%");
+					node1.classList.add("form-group");
+					var divercp=document.createElement("div");
+					divercp.classList.add("col-sm-2");
+					divercp.innerHTML="产品：";
+					var inputercp=document.createElement("input");
+					inputercp.setAttribute("type","text");
+					inputercp.classList.add("col-sm-3");
+					inputercp.classList.add("stepcp");
+					inputercp.id=j;
+					var diveryq=document.createElement("div");
+					diveryq.classList.add("col-sm-2");
+					diveryq.innerHTML="数量：";
+					var inputernum=document.createElement("input");
+					inputernum.classList.add("col-sm-3");
+					inputernum.setAttribute("type","text");
+					inputernum.classList.add("stepnum");
+					node1.appendChild(divercp);
+					node1.appendChild(inputercp);
+					node1.appendChild(diveryq);
+					node1.appendChild(inputernum);
+					var btnsc=document.createElement("input");
+					btnsc.onclick=deleterow;
+					btnsc.classList.add("col-sm-2");
+					btnsc.setAttribute("type","button");
+					btnsc.value="删除";
+					node1.appendChild(btnsc);
+					ulcp.appendChild(node1);
+					function deleterow(){
+						ulcp.removeChild(node1);
+					};
+				};
+				function addinstrument(){
+					var node2=document.createElement("li");
+					node2.setAttribute("style","width:80%");
+					node2.classList.add("form-group");
+					var diveryq=document.createElement("div");
+					diveryq.classList.add("col-sm-2");
+					diveryq.innerHTML="仪器：";
+					var inputeryq=document.createElement("input");
+					inputeryq.setAttribute("type","text");
+					inputeryq.classList.add("col-sm-8");
+					inputeryq.classList.add("stepyq");
+					node2.appendChild(diveryq);
+					node2.appendChild(inputeryq);
+					inputeryq.id=j;
+					var btnsc=document.createElement("input");
+					btnsc.onclick=deleterow;
+					btnsc.classList.add("col-sm-2");
+					btnsc.setAttribute("type","button");
+					btnsc.value="删除";
+					node2.appendChild(btnsc);
+					ulyq.appendChild(node2);
+					function deleterow(){
+						ulyq.removeChild(node2);
+					};
+				};
+			};
+			function delRow(){
+				var parent=document.getElementById("a");
+				var child=document.getElementById(i);
+				parent.removeChild(child);
+				i-=1;
+			};
+    </script>
+<style type="text/css">
+    body
+{
+    font-family:Gill Sans MT;
+    padding:10px;
+}
+fieldset
+{
+    border: solid 1px #000;
+    padding:10px;
+    display:block;
+    clear:both;
+    margin:5px 0px;
+}
+legend
+{
+    padding:0px 10px;
+    background:black;
+    color:#FFF;
+}
+input.add
+{
+    float:right;
+}
+input.fieldname
+{
+    float:left;
+    clear:left;
+    display:block;
+    width:500px;
+    margin:5px;
+}
+input.stepname
+{
+    float:left;
+    clear:left;
+    display:block;
+    margin:5px;
+}
+select.fieldtype
+{
+    float:left;
+    display:block;
+    margin:5px;
+}
+input.remove
+{
+    float:left;
+    display:block;
+    margin:5px;
+}
+#yourform label
+{
+    float:left;
+    clear:left;
+    display:block;
+    margin:5px;
+}
+#yourform input, #yourform textarea
+{
+    float:left;
+    display:block;
+    margin:5px;
+}
+div.input-group
+{
+    margin-top: 30px;
+}
+fieldset.yourform
+{
+    margin-top: 30px;
+}
+</style>
+<div class="input-group">
+    <span class="label label-info" style="height:30px">项目名称</span>
+    <input id="item_name" type="text"  placeholder="项目名称">
+</div>
+<div class="input-group">
+    <span class="label label-info">价格</span>
+    <input id="item_price" type="text"  placeholder="价格">
+</div>
+<div class="input-group">
+    <span class="label label-info">次数</span>
+    <input id="frequency" type="text"  placeholder="次数">
+</div>
+<fieldset id="buildyourform" class="yourform">
+    <legend>添加步骤</legend>
+	<div class="a">
+			<input type="button" value="添加一行" onclick="addRow()"/>
+			<input type="button" value="删除一行" onclick="delRow()"/>
+			<ul id="a" class="">
+			</ul>
+    </div>
+</fieldset>
+
+<hr/>
+
+
+<input type="button" value="提交" class="add" id="commit" />
+    <div id="test"></div>
+{% endblock %}
