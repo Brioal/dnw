@@ -4,6 +4,20 @@ var currentPageIndex = 0;
 // 获取仓库列表
 getStoreList();
 
+setTimeout(addSelect,500);
+
+
+// 添加下拉菜单
+function addSelect(){
+    var line = " <label for=\"select_state\">仓库状态: </label>\n" +
+        "                    <select  id=\"select_state\">\n" +
+        "                        <option value=\"0\">未启用</option>\n" +
+        "                        <option value=\"1\">已启用</option>\n" +
+        "                    </select>";
+    $("#select_div").append(line);
+}
+
+
 // 获取仓库列表
 function getStoreList() {
     var url = 'http://127.0.0.1:8000/stock/get_warehouse_list/';
