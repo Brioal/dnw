@@ -5,34 +5,24 @@
     <bookmark url="file://$PROJECT_DIR$/store/models.py" line="51" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eea0b135-18c9-4ba6-933b-8da27e3f3d1a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Inventory_app/templates/Inventory_app/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inventory_app/templates/Inventory_app/warehouse_management.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inventory_app/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/returnvisit/templates/returnvisit/plane_manager.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Inventory_app/css/iziToast.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Inventory_app/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Inventory_app/js/add/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Inventory_app/js/history_add/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Inventory_app/js/history_plane/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Inventory_app/js/iziToast.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Inventory_app/js/jqPaginator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Inventory_app/js/jquery-editable-select.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Inventory_app/js/people_list/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Inventory_app/js/plane_manager/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Inventory_app/js/store/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Inventory_app/js/store_change/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Inventory_app/js/store_change_history/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Inventory_app/js/supply/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Inventory_app/js/toast.js" afterDir="false" />
+    <list default="true" id="eea0b135-18c9-4ba6-933b-8da27e3f3d1a" name="Default" comment="&#10;&#10;2018/8/15：&#10;1. 网络客服，登记时间删除。 done&#10;&#10;2. 预约时间，做成年月日时分的格式。&#9;done&#10;&#10;3. 星座，做成下拉。done&#10;&#10;4. 渠道，做成下拉：暂时加入三个，抖音，微博，团购。其他的在后台添加。 done&#10;&#10;5. 性别。默认的地方改为请选择。 done&#10;&#10;6. 网络咨询师看到的客户信息依次为：状态，姓名，手机号，预约到店时间，网络咨询，咨询时间，到店时间，预约门店&#10;&#10;7. 状态转为未到店和已到店。未到店转为已到店的条件是，客户到店时前台录入信息点提交时候转变。 done&#10;&#10;8. 到店时间改为前台录入信息的时间，也就是状态从未到店变为已到店的时候，初始状态默认为空。 done&#10;&#10;9. 登记时间自动录入 done&#10;&#10;10. 网络客服自动录入 done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/returnvisit/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/returnvisit/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/returnvisit/templates/returnvisit/now_back_customerlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/returnvisit/templates/returnvisit/now_back_customerlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/returnvisit/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/returnvisit/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/returnvisit/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/returnvisit/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vin码查询/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/vin码查询/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vin码查询/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/vin码查询/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/returnvisit/templates/returnvisit/plane_manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/returnvisit/templates/returnvisit/plane_manager.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Inventory_app/css/iziToast.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Inventory_app/css/iziToast.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Inventory_app/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Inventory_app/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Inventory_app/js/add/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/Inventory_app/js/add/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Inventory_app/js/history_add/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/Inventory_app/js/history_add/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Inventory_app/js/history_plane/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/Inventory_app/js/history_plane/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Inventory_app/js/iziToast.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/Inventory_app/js/iziToast.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Inventory_app/js/jqPaginator.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/Inventory_app/js/jqPaginator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Inventory_app/js/people_list/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/Inventory_app/js/people_list/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Inventory_app/js/plane_manager/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/Inventory_app/js/plane_manager/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Inventory_app/js/store/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/Inventory_app/js/store/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Inventory_app/js/store_change/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/Inventory_app/js/store_change/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Inventory_app/js/store_change_history/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/Inventory_app/js/store_change_history/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Inventory_app/js/supply/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/Inventory_app/js/supply/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Inventory_app/js/toast.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/Inventory_app/js/toast.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -74,14 +64,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/returnvisit/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="89" column="32" lean-forward="true" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
+            <state relative-caret-position="380">
+              <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/Inventory_app/js/plane_manager/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1763">
+              <caret line="123" column="9" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/Inventory_app/js/store/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-5080">
+              <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="warehouse_management.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Inventory_app/templates/Inventory_app/warehouse_management.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="141" column="17" selection-start-line="141" selection-start-column="17" selection-end-line="141" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -90,7 +110,7 @@
         <entry file="file://$PROJECT_DIR$/Inventory_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="380">
-              <caret line="31" column="12" lean-forward="true" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+              <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -123,7 +143,7 @@
         <entry file="file://$PROJECT_DIR$/Inventory_app/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="380">
-              <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="16" />
+              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -189,6 +209,11 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -282,6 +307,19 @@
             <path>
               <item name="dnw-master (1)" type="b2602c69:ProjectViewProjectNode" />
               <item name="dnw-master (1)" type="462c0819:PsiDirectoryNode" />
+              <item name="Inventory_app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dnw-master (1)" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dnw-master (1)" type="462c0819:PsiDirectoryNode" />
+              <item name="Inventory_app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="Inventory_app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dnw-master (1)" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dnw-master (1)" type="462c0819:PsiDirectoryNode" />
               <item name="returnvisit" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -296,6 +334,32 @@
               <item name="returnvisit" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="returnvisit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dnw-master (1)" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dnw-master (1)" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dnw-master (1)" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dnw-master (1)" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="Inventory_app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dnw-master (1)" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dnw-master (1)" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="Inventory_app" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dnw-master (1)" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dnw-master (1)" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="Inventory_app" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="dnw-master (1)" type="b2602c69:ProjectViewProjectNode" />
@@ -322,7 +386,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/hzb-system" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
@@ -564,7 +628,21 @@
       <option name="project" value="LOCAL" />
       <updated>1534383633346</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="&#10;&#10;2018/8/15：&#10;1. 网络客服，登记时间删除。 done&#10;&#10;2. 预约时间，做成年月日时分的格式。&#9;done&#10;&#10;3. 星座，做成下拉。done&#10;&#10;4. 渠道，做成下拉：暂时加入三个，抖音，微博，团购。其他的在后台添加。 done&#10;&#10;5. 性别。默认的地方改为请选择。 done&#10;&#10;6. 网络咨询师看到的客户信息依次为：状态，姓名，手机号，预约到店时间，网络咨询，咨询时间，到店时间，预约门店&#10;&#10;7. 状态转为未到店和已到店。未到店转为已到店的条件是，客户到店时前台录入信息点提交时候转变。 done&#10;&#10;8. 到店时间改为前台录入信息的时间，也就是状态从未到店变为已到店的时候，初始状态默认为空。 done&#10;&#10;9. 登记时间自动录入 done&#10;&#10;10. 网络客服自动录入 done">
+      <created>1534850351475</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1534850351475</updated>
+    </task>
+    <task id="LOCAL-00011" summary="&#10;&#10;2018/8/15：&#10;1. 网络客服，登记时间删除。 done&#10;&#10;2. 预约时间，做成年月日时分的格式。&#9;done&#10;&#10;3. 星座，做成下拉。done&#10;&#10;4. 渠道，做成下拉：暂时加入三个，抖音，微博，团购。其他的在后台添加。 done&#10;&#10;5. 性别。默认的地方改为请选择。 done&#10;&#10;6. 网络咨询师看到的客户信息依次为：状态，姓名，手机号，预约到店时间，网络咨询，咨询时间，到店时间，预约门店&#10;&#10;7. 状态转为未到店和已到店。未到店转为已到店的条件是，客户到店时前台录入信息点提交时候转变。 done&#10;&#10;8. 到店时间改为前台录入信息的时间，也就是状态从未到店变为已到店的时候，初始状态默认为空。 done&#10;&#10;9. 登记时间自动录入 done&#10;&#10;10. 网络客服自动录入 done">
+      <created>1534851738105</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1534851738106</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -672,7 +750,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/store/admin.py</url>
+          <url />
           <option name="timeStamp" value="98" />
         </line-breakpoint>
       </breakpoints>
@@ -869,13 +947,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/Inventory_app/js/store/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Inventory_app/templates/Inventory_app/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -883,13 +954,6 @@
           <folding>
             <element signature="e#2716#2724#0#HTML" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Inventory_app/templates/Inventory_app/warehouse_management.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
@@ -923,16 +987,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/Inventory_app/js/plane_manager/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="844">
-          <caret line="123" column="9" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1017,7 +1071,7 @@
     <entry file="file://$PROJECT_DIR$/Inventory_app/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
-          <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="16" />
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1031,7 +1085,7 @@
     <entry file="file://$PROJECT_DIR$/Inventory_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
-          <caret line="31" column="12" lean-forward="true" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
@@ -1040,11 +1094,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/returnvisit/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="89" column="32" lean-forward="true" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
+        <state relative-caret-position="380">
+          <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/Inventory_app/js/plane_manager/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1763">
+          <caret line="123" column="9" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Inventory_app/templates/Inventory_app/warehouse_management.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="141" column="17" selection-start-line="141" selection-start-column="17" selection-end-line="141" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/Inventory_app/js/store/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5080">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
         </state>
       </provider>
     </entry>
