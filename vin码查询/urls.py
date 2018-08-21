@@ -30,6 +30,8 @@ urlpatterns = [
     #项目录入
     path('items/', include('items.urls')),
     #回访计划
-    path('back_plan/', include('returnvisit.urls'))
+    path('back_plan/', include('returnvisit.urls')),
+    #库存系统
+    path('stock/', include('Inventory_app.urls'))
 
 ]

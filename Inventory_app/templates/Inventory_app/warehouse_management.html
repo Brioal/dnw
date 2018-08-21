@@ -1,0 +1,160 @@
+{% extends 'admin/base.html' %}
+{% load staticfiles %}
+{% block extrastyle %}
+    <link href=https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css rel="stylesheet">
+    <link href=/static/Inventory_app/css/iziToast.min.css rel="stylesheet">
+    <link href=/static/Inventory_app/css/main.css rel="stylesheet}">
+{% endblock %}
+{% block content %}
+<!--html部分-->
+<h2 style="margin-bottom: 20px">仓库管理</h2>
+<nav class="navbar navbar-expand-lg navbar-light " style="margin: 0px;padding: 0px">
+    <button class="btn btn-primary" type="button" id="btn_add">新建仓库</button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto"></ul>
+        <div class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="输入关键字" id="et_keyword">
+            <p class="btn btn-outline-danger my-2 my-sm-0" style="margin-right: 5px" id="btn_clear">清空</p>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="btn_search">搜索</button>
+        </div>
+    </div>
+</nav>
+<hr class="mb-4">
+<!--表格内容-->
+<table class="table table-striped">
+    <thead style="color: #ffffff;background-color: #0093ff;border: #32383e">
+    <tr>
+        <th>编号</th>
+        <th>仓库名称</th>
+        <th>仓库状态</th>
+        <th>仓库操作</th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+
+    </tbody>
+</table>
+<ul class="pagination" id="page"></ul>
+<!-- 添加和修改的弹窗 -->
+<div class="modal fade" id="add_edit_modal" tabindex="-1" role="dialog" aria-labelledby="add_edit_modalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="add_edit_modalLabel">新建仓库</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="et_id">
+                <div>
+                    <label for="et_name">仓库名称: </label>
+                    <input type="text" class="form-control" id="et_name" placeholder="仓库名称">
+                    <div class="invalid-feedback">
+                        请输入仓库名称
+                    </div>
+                </div>
+                <div>
+                    <label for="select_state">仓库状态: </label>
+                    <select c id="select_state">
+                        <option value="0">未启用</option>
+                        <option value="1">已启用</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="btn_save">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 删除的弹窗 -->
+<div class="modal fade" id="del_edit_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">警告</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="modal_et_id">
+                是否要删除此仓库?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-danger" id="modal_btn_del">删除</button>
+            </div>
+        </div>
+    </div>
+</div>
+ {% block js %}
+     <!--jquery-->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <!--bootstrap-->
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="/static/Inventory_app/js/iziToast.min.js"></script>
+    <script src="/static/Inventory_app/js/jqPaginator.js"></script>
+    <script src="/static/Inventory_app/js/store/main.js"></script>
+     <script>
+    // 隐藏清空按钮
+    $("#btn_clear").hide();
+    // 新建仓库
+    $("#btn_add").click(function () {
+        // 显示弹窗
+        $('#add_edit_modal').modal('show');
+        // 设置内容
+        $("#et_id").val("");
+        $("#et_name").val("");
+        $("#select_state").val(0);
+        // 设置标题
+        $("#add_edit_modalLabel").val("新建仓库");
+    });
+
+    // 保存事件
+    $("#btn_save").click(function () {
+        saveStore();
+    });
+
+    // 删除事件
+    $("#modal_btn_del").click(function () {
+        delStore();
+    });
+
+    // 搜索
+    $("#btn_search").click(function () {
+        // 检查关键字
+        var key = $("#et_keyword").val();
+        console.log(key);
+        if (key == null || key == "") {
+            iziToast.error({
+                title: '出错了',
+                position: 'topRight',
+                message: '请输入要搜索的关键字后重试'
+            });
+            return;
+        }
+        $("#btn_clear").show();
+        getStoreList();
+    });
+    // 清空
+    $("#btn_clear").click(function () {
+        $("#et_keyword").val("");
+        $("#btn_clear").hide();
+        getStoreList();
+    });
+
+    $("#et_keyword").on('input', function (e) {
+        var key = $("#et_keyword").val();
+        if (key == null || key == "") {
+            return;
+        }
+        $("#btn_clear").show();
+    });
+</script>
+{% endblock %}
+{% endblock %}

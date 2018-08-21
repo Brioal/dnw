@@ -10,7 +10,7 @@ class back_plan1(back_plan):
 
 
 class back_plan_admin(admin.ModelAdmin):
-    search_fields = ['back_customer']
+    search_fields = ['back_customer__name']
     list_display = ['back_customer', 'back_state', 'back_data']
     fieldsets = (
         ('回访信息', {

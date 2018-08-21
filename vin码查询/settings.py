@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'items',
     'order',
     'indexpage',
+    #回访计划
     'returnvisit',
+    #库存
+    'Inventory_app',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
