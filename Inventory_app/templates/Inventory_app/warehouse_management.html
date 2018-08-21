@@ -34,7 +34,7 @@
 
     </tbody>
 </table>
-<ul class="pagination" id="page"></ul>
+<ul style="float:right" class="pagination" id="page"></ul>
 <!-- 添加和修改的弹窗 -->
 <div class="modal fade" id="add_edit_modal" tabindex="-1" role="dialog" aria-labelledby="add_edit_modalLabel"
      aria-hidden="true">
@@ -57,7 +57,7 @@
                 </div>
                 <div>
                     <label for="select_state">仓库状态: </label>
-                    <select c id="select_state">
+                    <select  id="select_state">
                         <option value="0">未启用</option>
                         <option value="1">已启用</option>
                     </select>
@@ -100,6 +100,7 @@
     <script src="/static/Inventory_app/js/iziToast.min.js"></script>
     <script src="/static/Inventory_app/js/jqPaginator.js"></script>
     <script src="/static/Inventory_app/js/store/main.js"></script>
+    <script src="/static/Inventory_app/js/toast.js"></script>
      <script>
     // 隐藏清空按钮
     $("#btn_clear").hide();

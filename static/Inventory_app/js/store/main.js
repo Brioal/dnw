@@ -5,7 +5,7 @@ getStoreList();
 
 // 获取仓库列表
 function getStoreList() {
-    var url = 'http://localhost:8085/api/store/list';
+    var url = 'http://127.0.0.1:8000/stock/get_warehouse_list/';
     // 获取每页数量
     var pageSize = 10;
     // 获取关键字
@@ -22,6 +22,7 @@ function getStoreList() {
         // datatype: "json",
         // contentType: "application/json",
         success: function (data) {
+         data = JSON.parse(data);
             if (data.success) {
                 // data = JSON.parse(data);
                 showData(data);
@@ -104,14 +105,16 @@ function showData(data) {
     }
     // 滚动到顶部
     $('html,body').animate({scrollTop: '0px'}, 600);
+    var allpage = data.total/10+1;
+    if(allpage>1){
     // 显示分页
     $('#page').jqPaginator({
-        totalPages: data.allpage,
+        totalPages: allpage,
         visiblePages: 10,
         currentPage: currentPageIndex + 1,
-        prev: '<li class="page-item"><a class="page-link" href="#">上一页</a></li>',
-        next: '<li class="page-item"><a class="page-link" href="#">下一页</a></li>',
-        page: '<li class="page-item"><a class="page-link" href="#">{{page}}</a></li>',
+        prev: '<li style="list-style:none" class="page-item"><a class="page-link" href="#">上一页</a></li>',
+        next: '<li style="list-style:none" class="page-item"><a class="page-link" href="#">下一页</a></li>',
+        page: '<li style="list-style:none" class="page-item"><a class="page-link" href="#">{{page}}</a></li>',
         onPageChange: function (num, type) {
             if (type == 'change') {
                 currentPageIndex = num - 1;
@@ -119,13 +122,12 @@ function showData(data) {
             }
             console.log(num);
             console.log(currentPageIndex);
-            // 跳转页面
-            // if ((currentPageIndex + 1) != num) {
-            //     currentPageIndex = num;
-            //     getStoreList();
-            // }
+
         }
     });
+    }
+
+
 }
 
 // 保存仓库内容
@@ -163,7 +165,7 @@ function saveStore() {
     // 隐藏modal
     $('#add_edit_modal').modal('hide');
     // 保存内容
-    var url = 'http://localhost:8085/api/store/save';
+    var url = 'http://127.0.0.1:8000/stock/add_warehouse/';
     $.ajax({
         url: url,
         type: 'POST',
@@ -175,18 +177,12 @@ function saveStore() {
         // datatype: "json",
         // contentType: "application/json",
         success: function (data) {
-            // 隐藏弹窗
-            var toast = document.querySelector('.iziToast');
-            iziToast.hide({}, toast);
-            if (data.success) {
-                // data = JSON.parse(data);
-                // 保存成功
 
-                iziToast.success({
-                    title: '成功',
-                    position: 'topRight',
-                    message: '保存仓库成功!'
-                });
+            data = JSON.parse(data);
+            if (data.success) {
+                // 保存成功
+                showSuccess('成功','成功');
+
                 // 刷新数据
                 setTimeout(function () {
                     getStoreList();
